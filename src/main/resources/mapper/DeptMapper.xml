@@ -6,6 +6,16 @@
 	<resultMap id="BaseResultMap" type="com.sheng.entity.Dept">
 		<id column="did" property="did" />
 		<result column="dname" property="dname" />
+		<collection property="personList" ofType="com.sheng.entity.Person">
+			<id column="id" property="id" />
+			<result column="name" property="name" />
+			<result column="age" property="age" />
+			<result column="did" property="did" />
+		</collection>
 	</resultMap>
+	
+	<select id="getAllDeptInfoByID" resultMap="BaseResultMap">
+		select t1.did,t1.dname,t2.id,t2.name,t2.age,t2.did from dept t1,person t2 where t1.did=t2.did and t1.did=#{did};
+	</select>
 	
 </mapper>

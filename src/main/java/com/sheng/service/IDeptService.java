@@ -12,5 +12,5 @@ import com.baomidou.mybatisplus.service.IService;
  * @since 2017-05-22
  */
 public interface IDeptService extends IService<Dept> {
-	
+	public Dept getAllDeptInfoByID(int did);
 }

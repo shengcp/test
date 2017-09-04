@@ -7,6 +7,7 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.web.HttpMessageConverters;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
@@ -16,6 +17,7 @@ import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
 
 @EnableTransactionManagement
 @SpringBootApplication
+@ServletComponentScan
 @MapperScan("com.sheng.mapper")//配置mybatis包扫描
 public class Application {
 	

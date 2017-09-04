@@ -7,6 +7,7 @@ import com.baomidou.mybatisplus.annotations.TableName;
 import com.baomidou.mybatisplus.enums.IdType;
 
 import java.io.Serializable;
+import java.util.List;
 
 
 /**
@@ -28,7 +29,8 @@ public class Dept extends Model<Dept> {
     @TableField(value="dname")
 	private String dname;
 
-
+    private List<Person> personList;
+    
 	public Integer getDid() {
 		return did;
 	}
@@ -43,6 +45,14 @@ public class Dept extends Model<Dept> {
 
 	public void setDname(String dname) {
 		this.dname = dname;
+	}
+
+	public List<Person> getPersonList() {
+		return personList;
+	}
+
+	public void setPersonList(List<Person> personList) {
+		this.personList = personList;
 	}
 
 	@Override

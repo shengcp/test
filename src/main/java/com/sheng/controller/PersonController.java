@@ -5,10 +5,10 @@ package com.sheng.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.sheng.entity.Person;
-import com.sheng.exception.ChangpengException;
 import com.sheng.service.IPersonService;
 
 /**
@@ -33,7 +33,7 @@ public class PersonController {
 	@RequestMapping("/getPerson")
 	public ResponseBase<Person> getOne(Integer id){
 		Person person=personService.getOneByID(id);
-		return ResponseBase.success(person);	
+		return ResponseBase.success(person);
 	}
 	
 }

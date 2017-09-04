@@ -7,8 +7,28 @@
 <body>
 <!--/*@thymesVar id="name" type="java.lang.String"*/-->
 <p>3333</p>
+<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 <script type="text/javascript">
-	
+$(function(){ 
+	var a=$.ajax({
+		url:"http://127.0.0.1:8081/sheng/dept/getAllDeptInfo",
+		data: "did=1",
+		type:"get",
+		cache:false,
+		dataType:'jsonp',
+		success:function(ret) {
+			var str=JSON.stringify(ret);
+			console.log("json:",str);
+		}
+	});
+});
 </script>
+	<div>
+		<span></span><br/>
+		<span></span><br/>
+		<span></span><br/>
+		<span></span><br/>
+	</div>
+
 </body>
 </html>

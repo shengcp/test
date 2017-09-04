@@ -13,4 +13,5 @@ import com.baomidou.mybatisplus.mapper.BaseMapper;
  */
 public interface DeptMapper extends BaseMapper<Dept> {
 
+	Dept getAllDeptInfoByID(int did);
 }

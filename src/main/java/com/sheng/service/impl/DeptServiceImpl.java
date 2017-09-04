@@ -4,6 +4,8 @@ import com.sheng.entity.Dept;
 import com.sheng.mapper.DeptMapper;
 import com.sheng.service.IDeptService;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -16,5 +18,13 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements IDeptService {
+
+	@Autowired
+	private DeptMapper deptMapper;
+	
+	@Override
+	public Dept getAllDeptInfoByID(int did) {
+		return deptMapper.getAllDeptInfoByID(did);
+	}
 	
 }
